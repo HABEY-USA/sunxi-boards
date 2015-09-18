@@ -831,7 +831,7 @@ sdc_regulator       = "none"
 ;emmc flash
 [mmc2_para]
 sdc_used            = 1
-sdc_detmode         = 4
+sdc_detmode         = 3
 sdc_buswidth        = 4
 sdc_cmd             = port:PC06<3><1><2><default>
 sdc_clk             = port:PC07<3><1><2><default>
@@ -844,6 +844,7 @@ sdc_use_wp          = 0
 sdc_wp              =
 sdc_isio            = 0
 sdc_regulator       = "none"
+emmc_rst	    = port:PC24<1><default><default><1>
 
 [mmc3_para]
 sdc_used            = 1
@@ -1163,8 +1164,7 @@ spdif_din           =
 
 [audio_para]
 audio_used          = 1
-;audio_pa_ctrl        = port:PH15<1><default><default><0>
-audio_pa_ctrl         = port:PD20<1><default><default><0>
+audio_pa_ctrl        = port:PH24<1><default><default><0>
 audio_pop_ctrl        = port:PI14<1><default><default><1>
 headphone_direct_used = 0
 ;playback_used	      = 1
