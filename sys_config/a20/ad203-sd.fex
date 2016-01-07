@@ -142,7 +142,7 @@ emac_txclk          = port:PA14<2><default><default><default>
 emac_crs            = port:PA15<2><default><default><default>
 emac_col            = port:PA16<2><default><default><default>
 emac_reset          = port:PA17<1><default><default><default>
-emac_power	    = port:PB11<1><default><default><default>
+emac_power	    = port:PI12<1><default><default><1>
 
 ;-------------------------------------------------------------
 ; GMAC configuration
@@ -186,6 +186,7 @@ twi1_sda            = port:PB19<2><default><default><default>
 twi2_used           = 1
 twi2_scl            = port:PB20<2><default><default><default>
 twi2_sda            = port:PB21<2><default><default><default>
+at24c02_wp			= port:PD25<1><default><default><default>
 
 ;-------------------------------------------------------------------------------
 ;uart configuration
@@ -212,13 +213,13 @@ uart_dcd            = port:PA16<4><1><default><default>
 uart_ring           = port:PA17<4><1><default><default>
 
 [uart_para2]
-uart_used           = 1
+uart_used           = 0
 uart_port           = 2
 uart_type           = 4
-uart_tx             = port:PI18<3><default><default><default>
-uart_rx             = port:PI19<3><default><default><default>
-uart_rts             = port:PI16<3><default><default><default>
-uart_cts             = port:PI17<3><default><default><default>
+;uart_tx             = port:PI18<3><default><default><default>
+;uart_rx             = port:PI19<3><default><default><default>
+;uart_rts             = port:PI16<3><default><default><default>
+;uart_cts             = port:PI17<3><default><default><default>
 
 [uart_para3]
 uart_used           = 0
@@ -261,13 +262,16 @@ uart_rx             = port:PA15<4><1><default><default>
 ;spi configuration
 ;-------------------------------------------------------------------------------
 [spi0_para]
-spi_used            = 0
+spi_used            = 1
 spi_cs_bitmap       = 1
-spi_cs0             = port:PI10<2><default><default><default>
-spi_cs1             = port:PI14<2><default><default><default>
-spi_sclk            = port:PI11<2><default><default><default>
-spi_mosi            = port:PI12<2><default><default><default>
-spi_miso            = port:PI13<2><default><default><default>
+spi_cs0             = port:PI15<1><default><default><1>
+;spi_cs1             = port:PI14<2><default><default><default>
+spi_sclk            = port:PI17<1><default><default><default>
+spi_mosi            = port:PI18<1><default><default><default>
+spi_miso            = port:PI19<1><default><default><default>
+ist3020_nRst	    = port:PI10<1><default><default><default>
+ist3020_A0	    = port:PI21<1><default><default><default>
+ist3020_backlight   = port:PI11<1><default><default><default>
 
 [spi1_para]
 spi_used            = 0
@@ -1138,7 +1142,7 @@ compass_int         = port:PI13<6><1><default><default>
 ;bt_uard_id         ---- uart index
 ;-------------------------------------------------------------------------------
 [bt_para]
-bt_used             = 1
+bt_used             = 0
 bt_uart_id          = 2
 bt_wakeup           = port:PI20<1><default><default><1>
 bt_gpio             = port:PI21<1><default><default><1>
