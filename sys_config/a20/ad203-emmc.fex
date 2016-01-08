@@ -1090,12 +1090,14 @@ gps_rx_en           = port:PI15<1><default><default><0>
 [sdio_wifi_para]
 sdio_wifi_used = 1
 sdio_wifi_sdc_id = 3
-sdio_wifi_mod_sel = 10
+sdio_wifi_mod_sel = 11
  
-rtl8189es_shdn		 = port:PH20<1><default><default><0>
-rtl8189es_wakeup	 = port:PI14<1><default><default><1>
-rtl8189es_vdd_en	 = port:PH11<1><default><default><0>
-rtl8189es_vcc_en	 = port:PH12<1><default><default><0>
+;rtl8189es_shdn		 = port:PH20<1><default><default><0>
+;rtl8189es_wakeup	 = port:PI14<1><default><default><1>
+;rtl8189es_vdd_en	 = port:PH11<1><default><default><0>
+;rtl8189es_vcc_en	 = port:PH12<1><default><default><0>
+rtl8723bs_wl_on	 = port:PH20<1><default><default><0>
+rtl8723bs_vcc_en	 = port:PH00<1><default><default><0>
 
 ;-------------------------------------------------------------------------------
 ;3G configuration
