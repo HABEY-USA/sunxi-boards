@@ -123,7 +123,7 @@ mali_clkdiv         = 1
 ;Ethernet MAC configuration
 ;-------------------------------------------------------------------------------
 [emac_para]
-emac_used           = 1
+emac_used           = 0
 emac_rxd3           = port:PA00<2><default><default><default>
 emac_rxd2           = port:PA01<2><default><default><default>
 emac_rxd1           = port:PA02<2><default><default><default>
@@ -186,7 +186,6 @@ twi1_sda            = port:PB19<2><default><default><default>
 twi2_used           = 1
 twi2_scl            = port:PB20<2><default><default><default>
 twi2_sda            = port:PB21<2><default><default><default>
-at24c02_wp			= port:PD25<1><default><default><default>
 
 ;-------------------------------------------------------------------------------
 ;uart configuration
@@ -213,13 +212,13 @@ uart_dcd            = port:PA16<4><1><default><default>
 uart_ring           = port:PA17<4><1><default><default>
 
 [uart_para2]
-uart_used           = 0
+uart_used           = 1
 uart_port           = 2
 uart_type           = 4
-;uart_tx             = port:PI18<3><default><default><default>
-;uart_rx             = port:PI19<3><default><default><default>
-;uart_rts             = port:PI16<3><default><default><default>
-;uart_cts             = port:PI17<3><default><default><default>
+uart_tx             = port:PI18<3><default><default><default>
+uart_rx             = port:PI19<3><default><default><default>
+uart_rts             = port:PI16<3><default><default><default>
+uart_cts             = port:PI17<3><default><default><default>
 
 [uart_para3]
 uart_used           = 0
@@ -262,16 +261,17 @@ uart_rx             = port:PA15<4><1><default><default>
 ;spi configuration
 ;-------------------------------------------------------------------------------
 [spi0_para]
-spi_used            = 1
+spi_used            = 0
 spi_cs_bitmap       = 1
 spi_cs0             = port:PI15<1><default><default><1>
 ;spi_cs1             = port:PI14<2><default><default><default>
-spi_sclk            = port:PI17<1><default><default><default>
-spi_mosi            = port:PI18<1><default><default><default>
-spi_miso            = port:PI19<1><default><default><default>
+spi_sclk            = port:PH09<1><default><default><default>
+spi_mosi            = port:PH08<1><default><default><default>
+;spi_miso            = port:PI19<1><default><default><default>
 ist3020_nRst	    = port:PI10<1><default><default><default>
 ist3020_A0	    = port:PI21<1><default><default><default>
 ist3020_backlight   = port:PI11<1><default><default><default>
+spk_pa				= port:PH14<1><default><default><default>
 
 [spi1_para]
 spi_used            = 0
@@ -327,7 +327,7 @@ ctp_revert_x_flag       = 0
 ctp_revert_y_flag       = 0
 ctp_exchange_x_y_flag   = 0
 
-ctp_int_port            = port:PH21<6><default><default><default>
+;ctp_int_port            = port:PH21<6><default><default><default>
 ctp_wakeup              = port:PB13<1><default><default><1>
 
 ;-------------------------------------------------------------------------------
@@ -959,7 +959,7 @@ usb_port_type            = 2
 usb_detect_type          = 1
 usb_id_gpio              = port:PH04<0><1><default><default>
 usb_det_vbus_gpio        = port:PH05<0><0><default><default>
-usb_drv_vbus_gpio        = port:PB09<1><0><default><0>
+usb_drv_vbus_gpio        = port:PB16<1><0><default><0>
 usb_host_init_state      = 0
 
 
@@ -979,10 +979,10 @@ usb_restric_flag    = 0
 ;---       USB2¿ØƱê
 ;------------------------------------------------------------------------------
 [usbc2]
-usb_used            = 1
+usb_used            = 0
 usb_port_type       = 1
 usb_detect_type     = 0
-usb_drv_vbus_gpio   = port:PH25<1><0><default><0> 
+usb_drv_vbus_gpio   = 
 usb_restrict_gpio   =
 
 usb_host_init_state = 1
@@ -1042,6 +1042,7 @@ gps_rx_en           = port:PI15<1><default><default><0>
 ;wifi_mod_sel   ---  0- none, 1- bcm40181, 2- bcm40183(wifi+bt),
 ;                    3 - rtl8723as(wifi+bt), 4- rtl8189es(SM89E00),
 ;                    5 - rtl8192cu, 6 - rtl8188eu, 7 - ap6210
+;                    11- rt8723bs (sdio wifi+bt)
 ;--------------------------------------------------------------------------------
 ;[wifi_para]
 ;wifi_used          = 1
@@ -1092,12 +1093,10 @@ sdio_wifi_used = 1
 sdio_wifi_sdc_id = 3
 sdio_wifi_mod_sel = 11
  
-;rtl8189es_shdn		 = port:PH20<1><default><default><0>
-;rtl8189es_wakeup	 = port:PI14<1><default><default><1>
-;rtl8189es_vdd_en	 = port:PH11<1><default><default><0>
-;rtl8189es_vcc_en	 = port:PH12<1><default><default><0>
+;rtl8723bs_shdn		 = port:PH20<1><default><default><0>
+rtl8723bs_wakeup	 = port:PH10<1><default><default><0>
 rtl8723bs_wl_on	 = port:PH20<1><default><default><0>
-rtl8723bs_vcc_en	 = port:PH00<1><default><default><0>
+rtl8723bs_vcc_en	 = port:PH05<1><default><default><0>
 
 ;-------------------------------------------------------------------------------
 ;3G configuration
