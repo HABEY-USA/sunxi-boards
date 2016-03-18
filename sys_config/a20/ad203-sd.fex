@@ -272,6 +272,8 @@ ist3020_nRst	    = port:PI10<1><default><default><default>
 ist3020_A0	    = port:PI21<1><default><default><default>
 ist3020_backlight   = port:PI11<1><default><default><default>
 spk_pa				= port:PH14<1><default><default><default>
+m62429p_data		= port:PH2<1><default><default><default>
+m62429p_clk			= port:PH3<1><default><default><default>
 
 [spi1_para]
 spi_used            = 0
