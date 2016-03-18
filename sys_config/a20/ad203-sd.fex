@@ -123,7 +123,7 @@ mali_clkdiv         = 1
 ;Ethernet MAC configuration
 ;-------------------------------------------------------------------------------
 [emac_para]
-emac_used           = 0
+emac_used           = 1
 emac_rxd3           = port:PA00<2><default><default><default>
 emac_rxd2           = port:PA01<2><default><default><default>
 emac_rxd1           = port:PA02<2><default><default><default>
@@ -186,6 +186,7 @@ twi1_sda            = port:PB19<2><default><default><default>
 twi2_used           = 1
 twi2_scl            = port:PB20<2><default><default><default>
 twi2_sda            = port:PB21<2><default><default><default>
+at24c02_wp			= port:PD25<1><default><default><default>
 
 ;-------------------------------------------------------------------------------
 ;uart configuration
